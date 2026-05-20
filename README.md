@@ -47,6 +47,32 @@ cd save-your-work
 chmod +x install.sh && ./install.sh
 ```
 
+## Example use cases
+
+**Starting a new session on a long implementation:**
+```
+/checkpoint
+# → reads PROGRESS_TRACKING.md, shows: "Last completed: Task 8. Next: Task 9 — Setup auth middleware. Continue?"
+```
+
+**Session crashes mid-task:**
+```
+/resume
+# → ⚡ Resuming... Last completed: Task 8. Next: Task 9. Picks up immediately.
+```
+
+**First run on a project with a plan file:**
+```
+/checkpoint
+# → PROGRESS_TRACKING.md doesn't exist. Reads PLAN.md, generates tracking file with all tasks as ⏳ Pending, then asks where to start.
+```
+
+**Running in auto mode (non-interactive pipeline):**
+```
+claude --automode /checkpoint
+# → resumes from Next Task silently, checkpoints after every task without asking anything.
+```
+
 ## How it works
 
 Both skills read and write `.project/PROGRESS_TRACKING.md` in your project directory. This file tracks tasks, phases, and completion dates across sessions.

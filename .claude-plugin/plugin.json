@@ -1,0 +1,19 @@
+{
+  "name": "save-your-work",
+  "description": "Two Claude Code skills for automatic development session tracking. /checkpoint saves progress after every task and resumes from where you left off. /resume recovers crashed sessions instantly.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Gerson Ribeiro",
+    "email": ""
+  },
+  "homepage": "https://github.com/gerson-ribeiro/save-your-work",
+  "repository": "https://github.com/gerson-ribeiro/save-your-work",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "checkpoint",
+    "progress-tracking",
+    "session-recovery",
+    "developer-productivity"
+  ]
+}

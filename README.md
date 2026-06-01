@@ -27,8 +27,12 @@ Run when a session was interrupted unexpectedly.
 
 **Via Claude Code plugin system:**
 
-```
-/plugin install save-your-work@github:gerson-ribeiro/save-your-work
+```bash
+# Add the community marketplace (only needed once)
+claude plugin marketplace add anthropics/claude-plugins-community
+
+# Install the plugin
+claude plugin install save-your-work
 ```
 
 **Manual installation (Windows):**

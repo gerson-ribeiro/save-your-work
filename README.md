@@ -1,10 +1,10 @@
 # save-your-work
 
-Two Claude Code skills for automatic development session tracking. `/checkpoint` saves progress after every task and resumes from where you left off. `/resume` recovers crashed sessions instantly. Works with any project that has a plan file.
+Two Claude Code skills for automatic development session tracking. `/saving-progress` saves progress after every task and resumes from where you left off. `/continue-progress` recovers crashed sessions instantly. Works with any project that has a plan file.
 
 ## Skills
 
-### `/checkpoint` — Start a session
+### `/saving-progress` — Start a session
 
 Run at the beginning of every development session.
 
@@ -15,13 +15,13 @@ Run at the beginning of every development session.
 - Adds a phase summary when a phase is fully done
 - Marks the project as complete when all tasks are done
 
-### `/resume` — Recover a crashed session
+### `/continue-progress` — Recover a crashed session
 
 Run when a session was interrupted unexpectedly.
 
 - Reads the last saved checkpoint
 - Resumes immediately from the next pending task — no questions asked
-- Continues auto-checkpointing just like a normal `/checkpoint` session
+- Continues auto-checkpointing just like a normal `/saving-progress` session
 
 ## Installation
 
@@ -55,25 +55,25 @@ chmod +x install.sh && ./install.sh
 
 **Starting a new session on a long implementation:**
 ```
-/checkpoint
+/saving-progress
 # → reads PROGRESS_TRACKING.md, shows: "Last completed: Task 8. Next: Task 9 — Setup auth middleware. Continue?"
 ```
 
 **Session crashes mid-task:**
 ```
-/resume
+/continue-progress
 # → ⚡ Resuming... Last completed: Task 8. Next: Task 9. Picks up immediately.
 ```
 
 **First run on a project with a plan file:**
 ```
-/checkpoint
+/saving-progress
 # → PROGRESS_TRACKING.md doesn't exist. Reads PLAN.md, generates tracking file with all tasks as ⏳ Pending, then asks where to start.
 ```
 
 **Running in auto mode (non-interactive pipeline):**
 ```
-claude --automode /checkpoint
+claude --automode /saving-progress
 # → resumes from Next Task silently, checkpoints after every task without asking anything.
 ```
 
@@ -81,7 +81,7 @@ claude --automode /checkpoint
 
 Both skills read and write `.project/PROGRESS_TRACKING.md` in your project directory. This file tracks tasks, phases, and completion dates across sessions.
 
-On first run, `/checkpoint` scans `.project/` for a plan file and generates the tracking file automatically. Supported plan file names: `PLAN.md`, `IMPLEMENTATION_PLAN.md`, `SPEC.md`, or any `.md` file containing phase/task headings.
+On first run, `/saving-progress` scans `.project/` for a plan file and generates the tracking file automatically. Supported plan file names: `PLAN.md`, `IMPLEMENTATION_PLAN.md`, `SPEC.md`, or any `.md` file containing phase/task headings.
 
 ## Tracking file format
 

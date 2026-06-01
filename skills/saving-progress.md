@@ -1,9 +1,9 @@
 ---
-name: checkpoint
+name: saving-progress
 description: Start a development session with automatic progress checkpoints. Reads or generates .project/PROGRESS_TRACKING.md, asks user what to do (or resumes automatically in automode), and saves a checkpoint after each completed task and phase.
 ---
 
-# Checkpoint Dev Session
+# Saving Progress Dev Session
 
 You are starting a development session with automatic progress tracking. Follow each step exactly and in order.
 
@@ -157,4 +157,4 @@ After updating the header, if `Next Task` is now `— (all done)`, also:
 
 ## Reminders
 
-- The last saved checkpoint is what `/resume` uses to recover from a crash — so checkpoint every task, no exceptions.
+- The last saved checkpoint is what `/continue-progress` uses to recover from a crash — so checkpoint every task, no exceptions.

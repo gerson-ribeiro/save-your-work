@@ -1,9 +1,9 @@
 ---
-name: resume
+name: continue-progress
 description: Recover a crashed or interrupted development session. Reads the last checkpoint in .project/PROGRESS_TRACKING.md and resumes immediately from the next pending task — no questions asked.
 ---
 
-# Resume Dev Session
+# Continue Progress Dev Session
 
 You are recovering an interrupted development session. Follow each step exactly and in order. Do NOT ask the user anything — resume immediately.
 
@@ -19,7 +19,7 @@ Open `.project/PROGRESS_TRACKING.md`.
 
 **If the file does NOT exist**, stop and tell the user:
 
-> "No progress tracking file found. Run `/checkpoint` first to initialize the session."
+> "No progress tracking file found. Run `/saving-progress` first to initialize the session."
 
 Do not proceed further.
 
@@ -29,7 +29,7 @@ Do not proceed further.
 - **Current Phase** — phase name and completion %
 - **Progress** — X/Y tasks count
 
-If the file exists but is missing required header fields (Last Completed, Next Task, Progress), tell the user: "PROGRESS_TRACKING.md appears malformed. Run `/checkpoint` to reinitialize." and stop.
+If the file exists but is missing required header fields (Last Completed, Next Task, Progress), tell the user: "PROGRESS_TRACKING.md appears malformed. Run `/saving-progress` to reinitialize." and stop.
 
 ---
 
@@ -111,4 +111,4 @@ Update the header **Status** field to `✅ Complete`.
 
 ## Reminders
 
-- Checkpoint every task — this is what makes `/resume` reliable for the next crash.
+- Checkpoint every task — this is what makes `/continue-progress` reliable for the next crash.

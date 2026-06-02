@@ -7,8 +7,8 @@ echo Installing save-your-work skills...
 
 if not exist "%SKILLS_DIR%" mkdir "%SKILLS_DIR%"
 
-copy /Y "%SCRIPT_DIR%skills\saving-progress.md" "%SKILLS_DIR%\saving-progress.md" >nul
-copy /Y "%SCRIPT_DIR%skills\continue-progress.md" "%SKILLS_DIR%\continue-progress.md" >nul
+copy /Y "%SCRIPT_DIR%skills\saving-progress\SKILL.md" "%SKILLS_DIR%\saving-progress.md" >nul
+copy /Y "%SCRIPT_DIR%skills\continue-progress\SKILL.md" "%SKILLS_DIR%\continue-progress.md" >nul
 
 echo.
 echo Done! Two skills installed to %SKILLS_DIR%:

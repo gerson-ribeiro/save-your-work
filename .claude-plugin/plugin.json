@@ -1,7 +1,7 @@
 {
   "name": "save-your-work",
   "description": "Two Claude Code skills for automatic development session tracking. /saving-progress saves progress after every task and resumes from where you left off. /continue-progress recovers crashed sessions instantly.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Gerson Ribeiro",
     "email": ""
@@ -16,5 +16,9 @@
     "progress-tracking",
     "session-recovery",
     "developer-productivity"
+  ],
+  "skills": [
+    "skills/saving-progress.md",
+    "skills/continue-progress.md"
   ]
 }
